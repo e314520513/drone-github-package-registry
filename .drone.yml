@@ -1,0 +1,15 @@
+- name: publish
+    image: plugins/docker:17.12
+    settings:
+      repo: appleboy/test
+      auto_tag: true
+      dockerfile: Dockerfile.alpine
+      default_suffix: alpine
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    when:
+      event:
+        - push
+        - tag
