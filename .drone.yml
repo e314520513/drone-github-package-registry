@@ -11,6 +11,6 @@ steps:
       auto_tag_suffix: linux-amd64
       username: e314520513
       dockerfile: Dockerfile
-      default_suffix: alpine
+      default_suffix: latest
       password:
         from_secret: docker_password
