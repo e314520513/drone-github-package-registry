@@ -1,15 +1,21 @@
-- name: publish
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: golang:1.13
+  commands:
+  - make build_linux_amd64
+
+- name: docker
     image: plugins/docker:17.12
     settings:
-      repo: appleboy/test
+      registry: docker.pkg.github.com      
+      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo
       auto_tag: true
+      auto_tag_suffix: linux-amd64
+      username: e314520513
       dockerfile: Dockerfile.alpine
       default_suffix: alpine
-      username:
-        from_secret: docker_username
       password:
         from_secret: docker_password
-    when:
-      event:
-        - push
-        - tag
