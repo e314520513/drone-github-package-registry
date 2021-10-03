@@ -5,8 +5,8 @@ steps:
   - name: publish-latest
     image: plugins/docker:17.12
     settings:
-      registry: docker.pkg.github.com      
-      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo1
+      registry: ghcr.io
+      repo: ghcr.io/e314520513/php-info
       auto_tag: true
       auto_tag_suffix: linux-amd64
       username: e314520513
@@ -17,8 +17,8 @@ steps:
   - name: publish-1.0.0
     image: plugins/docker:17.12
     settings:
-      registry: docker.pkg.github.com
-      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo1
+      registry: ghcr.io
+      repo: ghcr.io/e314520513/php-info
       auto_tag: true
       auto_tag_suffix: elder-version
       username: e314520513
