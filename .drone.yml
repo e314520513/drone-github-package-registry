@@ -6,7 +6,7 @@ steps:
     image: plugins/docker:17.12
     settings:
       registry: docker.pkg.github.com      
-      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo
+      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo1
       auto_tag: true
       auto_tag_suffix: linux-amd64
       username: e314520513
