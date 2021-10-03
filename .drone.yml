@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-  - name: docker
+  - name: publish-latest
     image: plugins/docker:17.12
     settings:
       registry: docker.pkg.github.com      
@@ -14,3 +14,15 @@ steps:
       default_suffix: latest
       password:
         from_secret: docker_password
+  - name: publish-1.0.0
+    image: plugins/docker:17.12
+    settings:
+      registry: docker.pkg.github.com
+      repo: docker.pkg.github.com/e314520513/drone-github-package-registry/demo1
+      auto_tag: true
+      auto_tag_suffix: elder-version
+      username: e314520513
+      dockerfile: Dockerfile-1.0.0
+      default_suffix: 1.0.0
+      password:
+        from_secret: docker_password        
